@@ -67,6 +67,10 @@ deno task dev
 
 `deno test --watch` が実行されます。
 
+## Release
+
+- `docs/release.md`: リリース手順
+
 ## License
 
 Apache-2.0
