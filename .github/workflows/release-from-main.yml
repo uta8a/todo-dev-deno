@@ -12,6 +12,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
+      actions: write
       contents: write
 
     steps:
@@ -52,3 +53,10 @@ jobs:
             --target main \
             --title "${TAG}" \
             --notes "Release ${TAG}"
+
+      - name: Trigger publish workflow for this tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="v${{ inputs.version }}"
+          gh workflow run publish.yml --ref main -f ref="${TAG}"
