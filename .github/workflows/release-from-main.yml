@@ -28,6 +28,11 @@ jobs:
             exit 1
           fi
 
+      - name: Configure git user for tagging
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Create and push tag
         run: |
           TAG="v${{ inputs.version }}"
