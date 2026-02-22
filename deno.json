@@ -1,6 +1,6 @@
 {
   "name": "@uta8a/todo-dev-deno",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "exports": "./mod.ts",
   "tasks": {
     "dev": "deno test --watch",
