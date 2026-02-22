@@ -1,7 +1,8 @@
 # todo-dev-deno
 
-Rust の `todo!` マクロのように、未実装箇所を実行時に明示的に失敗させるための Deno 向けユーティリティです。  
-開発中に `createTodo()` で作った関数を呼ぶと、呼び出し元の情報付きで例外を投げられます。
+Rust の `todo!` マクロのように、未実装箇所を実行時に明示的に失敗させるための
+Deno 向けユーティリティです。開発中に `createTodo()`
+で作った関数を呼ぶと、呼び出し元の 情報付きで例外を投げられます。
 
 ## Install
 
@@ -38,12 +39,15 @@ import { createTodo } from "jsr:@uta8a/todo-dev-deno";
 
 const todo = createTodo({
   onTodo: ({ message, site }) => {
-    throw new Error(`[TODO] ${site.name}:${site.line}:${site.col} ${message ?? ""}`);
+    throw new Error(
+      `[TODO] ${site.name}:${site.line}:${site.col} ${message ?? ""}`,
+    );
   },
 });
 ```
 
-`stackFrameSkip` を使うと、スタックトレース解析時にどのフレームを呼び出し元として扱うかを調整できます。
+`stackFrameSkip`
+を使うと、スタックトレース解析時にどのフレームを呼び出し元として扱うかを調整できます。
 
 ## API
 

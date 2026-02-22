@@ -1,9 +1,14 @@
 {
   "name": "@uta8a/todo-dev-deno",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "exports": "./mod.ts",
   "tasks": {
-    "dev": "deno test --watch"
+    "dev": "deno test --watch",
+    "fmt": "deno fmt",
+    "fmt:check": "deno fmt --check",
+    "lint": "deno lint",
+    "test": "deno test",
+    "check": "deno fmt --check && deno lint && deno test"
   },
   "license": "Apache-2.0",
   "imports": {
